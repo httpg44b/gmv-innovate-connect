@@ -53,7 +53,10 @@ const Hero = () => {
         
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`;
+        const isDark = document.documentElement.classList.contains('dark');
+        ctx.fillStyle = isDark 
+          ? `rgba(147, 197, 253, ${particle.opacity})` 
+          : `rgba(59, 130, 246, ${particle.opacity})`;
         ctx.fill();
       });
       
@@ -63,11 +66,15 @@ const Hero = () => {
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100) {
+          if (distance < 150) {
+            const isDark = document.documentElement.classList.contains('dark');
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = isDark
+              ? `rgba(147, 197, 253, ${0.4 * (1 - distance / 150)})`
+              : `rgba(59, 130, 246, ${0.4 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.stroke();
           }
         });
