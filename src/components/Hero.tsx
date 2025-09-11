@@ -118,10 +118,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative container mx-auto px-4 text-center z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm animate-fade-in-down">
-            <Sparkles className="w-4 h-4 text-primary animate-pulse-glow" />
-            <span className="text-sm font-medium text-primary">GMV Solution</span>
+          {/* Logo */}
+          <div className="mb-8 animate-scale-in">
+            <img 
+              src="/lovable-uploads/e8062710-6da1-46b7-bd53-65b99f401879.png" 
+              alt="GMV Solution" 
+              className="h-48 md:h-64 w-auto mx-auto drop-shadow-glow"
+            />
           </div>
           
           {/* Main Title */}

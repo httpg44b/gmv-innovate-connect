@@ -74,9 +74,9 @@ const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="group">
             <img 
-              src="/lovable-uploads/1e811800-3575-47c4-ae9f-cdfd29e4f2e7.png" 
+              src="/lovable-uploads/e8062710-6da1-46b7-bd53-65b99f401879.png" 
               alt="GMV Solution" 
-              className="h-12 w-auto transform group-hover:scale-110 transition-transform"
+              className="h-16 w-auto transform group-hover:scale-110 transition-transform"
             />
           </a>
 
