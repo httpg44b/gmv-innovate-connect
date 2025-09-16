@@ -28,18 +28,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-dark text-primary-foreground">
+    <section id="contact" className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('contact.title')}</h2>
-          <p className="text-xl opacity-80">{t('contact.subtitle')}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">{t('contact.title')}</h2>
+          <p className="text-xl text-primary-foreground/80">{t('contact.subtitle')}</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="name" className="text-primary-foreground">{t('contact.form.name')}</Label>
+                <Label htmlFor="name" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.name')}</Label>
                 <Input
                   id="name"
                   value={formData.name}
@@ -49,7 +49,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="email" className="text-primary-foreground">{t('contact.form.email')}</Label>
+                <Label htmlFor="email" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.email')}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -62,7 +62,7 @@ const Contact = () => {
             </div>
             
             <div>
-              <Label htmlFor="company" className="text-primary-foreground">{t('contact.form.company')}</Label>
+              <Label htmlFor="company" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.company')}</Label>
               <Input
                 id="company"
                 value={formData.company}
@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
             
             <div>
-              <Label htmlFor="message" className="text-primary-foreground">{t('contact.form.message')}</Label>
+              <Label htmlFor="message" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.message')}</Label>
               <Textarea
                 id="message"
                 value={formData.message}
