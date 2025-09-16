@@ -2,6 +2,7 @@ import React from 'react';
 import { Users, Target, Eye, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
+import teamCollaboration from '@/assets/team-collaboration.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -41,27 +42,40 @@ const About = () => {
         </div>
 
         {/* Company Introduction */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 hover:shadow-card transition-all duration-300">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                <Users className="w-6 h-6 text-primary-foreground" />
+        <div className="grid lg:grid-cols-2 gap-8 mb-16 items-center">
+          <div className="order-2 lg:order-1">
+            <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 hover:shadow-card transition-all duration-300">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Users className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3">GMV Solution</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {t('about.description')}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">GMV Solution</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t('about.description')}
+              
+              <div className="border-t border-border pt-6">
+                <h4 className="text-lg font-semibold mb-2">{t('about.founders')}</h4>
+                <p className="text-muted-foreground">
+                  {t('about.founders.description')}
                 </p>
               </div>
+            </Card>
+          </div>
+          
+          <div className="order-1 lg:order-2">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <img 
+                src={teamCollaboration} 
+                alt="GMV Solution Team" 
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
             </div>
-            
-            <div className="border-t border-border pt-6">
-              <h4 className="text-lg font-semibold mb-2">{t('about.founders')}</h4>
-              <p className="text-muted-foreground">
-                {t('about.founders.description')}
-              </p>
-            </div>
-          </Card>
+          </div>
         </div>
 
         {/* Mission, Vision, Values */}

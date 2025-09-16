@@ -102,7 +102,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background/95 to-primary/5">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -123,7 +123,7 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/e8062710-6da1-46b7-bd53-65b99f401879.png" 
               alt="GMV Solution" 
-              className="h-48 md:h-64 w-auto mx-auto drop-shadow-glow"
+              className="h-64 md:h-80 lg:h-96 w-auto mx-auto drop-shadow-[0_0_30px_rgba(59,130,246,0.6)] dark:drop-shadow-[0_0_30px_rgba(147,197,253,0.6)]"
             />
           </div>
           

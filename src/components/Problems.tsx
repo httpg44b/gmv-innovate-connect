@@ -2,6 +2,7 @@ import React from 'react';
 import { Clock, DollarSign, TrendingDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
+import businessGrowth from '@/assets/business-growth.jpg';
 
 const Problems = () => {
   const { t } = useLanguage();
@@ -34,6 +35,21 @@ const Problems = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             {t('problems.title')}
           </h2>
+        </div>
+        
+        {/* Feature Image */}
+        <div className="relative rounded-xl overflow-hidden shadow-2xl mb-12 max-w-4xl mx-auto">
+          <img 
+            src={businessGrowth} 
+            alt="Business Growth and Solutions" 
+            className="w-full h-80 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-accent/40"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-white text-center px-4">
+              {t('problems.subtitle') || 'Solutions qui transforment votre entreprise'}
+            </h3>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
