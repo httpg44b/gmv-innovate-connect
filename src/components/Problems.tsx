@@ -3,6 +3,7 @@ import { Clock, DollarSign, TrendingDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
 import businessGrowth from '@/assets/business-growth.jpg';
+import confusionImage from '@/assets/confusion-image.jpg';
 
 const Problems = () => {
   const { t } = useLanguage();
@@ -50,6 +51,15 @@ const Problems = () => {
               {t('problems.subtitle') || 'Solutions qui transforment votre entreprise'}
             </h3>
           </div>
+        </div>
+
+        {/* Confusion Image */}
+        <div className="mb-12 max-w-5xl mx-auto">
+          <img 
+            src={confusionImage} 
+            alt="Business challenges and solutions" 
+            className="w-full rounded-xl shadow-2xl"
+          />
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
