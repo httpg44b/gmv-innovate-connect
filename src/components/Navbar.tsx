@@ -76,7 +76,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/e8062710-6da1-46b7-bd53-65b99f401879.png" 
               alt="GMV Solution" 
-              className="h-20 w-auto transform group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+              className="h-24 w-auto transform group-hover:scale-110 transition-transform drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
             />
           </a>
 

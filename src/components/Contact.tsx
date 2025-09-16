@@ -45,7 +45,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                  className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
               <div>
@@ -56,7 +56,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                  className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
             </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                 id="company"
                 value={formData.company}
                 onChange={(e) => setFormData({...formData, company: e.target.value})}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
             
@@ -79,7 +79,7 @@ const Contact = () => {
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                 required
                 rows={5}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
 
