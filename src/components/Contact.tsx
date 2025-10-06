@@ -39,47 +39,47 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="name" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.name')}</Label>
+                <Label htmlFor="name" className="text-primary-foreground">{t('contact.form.name')}</Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required
-                  className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
+                  className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
               <div>
-                <Label htmlFor="email" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.email')}</Label>
+                <Label htmlFor="email" className="text-primary-foreground">{t('contact.form.email')}</Label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
-                  className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
+                  className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
             </div>
             
             <div>
-              <Label htmlFor="company" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.company')}</Label>
+              <Label htmlFor="company" className="text-primary-foreground">{t('contact.form.company')}</Label>
               <Input
                 id="company"
                 value={formData.company}
                 onChange={(e) => setFormData({...formData, company: e.target.value})}
-                className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
+                className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
             
             <div>
-              <Label htmlFor="message" className="text-primary-foreground dark:text-primary-foreground">{t('contact.form.message')}</Label>
+              <Label htmlFor="message" className="text-primary-foreground">{t('contact.form.message')}</Label>
               <Textarea
                 id="message"
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                 required
                 rows={5}
-                className="bg-background/95 dark:bg-background/80 border-primary-foreground/30 text-foreground placeholder:text-muted-foreground focus:border-primary"
+                className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
 

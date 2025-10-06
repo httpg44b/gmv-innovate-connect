@@ -2,8 +2,7 @@ import React from 'react';
 import { Clock, DollarSign, TrendingDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
-import businessGrowth from '@/assets/business-growth.jpg';
-import confusionImage from '@/assets/confusion-image.jpg';
+import gmvLogoFull from '@/assets/gmv-logo-full.png';
 
 const Problems = () => {
   const { t } = useLanguage();
@@ -30,51 +29,43 @@ const Problems = () => {
   ];
 
   return (
-    <section id="solutions" className="py-20">
+    <section id="solutions" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t('problems.title')}
           </h2>
         </div>
-        
-        {/* Feature Image */}
-        <div className="relative rounded-xl overflow-hidden shadow-2xl mb-12 max-w-4xl mx-auto">
-          <img 
-            src={businessGrowth} 
-            alt="Business Growth and Solutions" 
-            className="w-full h-80 object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 to-accent/40"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-white text-center px-4">
-              {t('problems.subtitle') || 'Solutions qui transforment votre entreprise'}
-            </h3>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
+          {/* Logo */}
+          <div className="flex justify-center order-1 md:order-1">
+            <img 
+              src={gmvLogoFull} 
+              alt="GMV Solution" 
+              className="h-24 object-contain opacity-80"
+            />
           </div>
-        </div>
 
-        {/* Confusion Image */}
-        <div className="mb-12 max-w-5xl mx-auto">
-          <img 
-            src={confusionImage} 
-            alt="Business challenges and solutions" 
-            className="w-full rounded-xl shadow-2xl"
-          />
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => (
-            <Card
-              key={index}
-              className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 hover:shadow-card transition-all duration-500 hover:-translate-y-2"
-            >
-              <div className={`w-14 h-14 bg-gradient-to-br ${problem.color} rounded-xl flex items-center justify-center mb-6`}>
-                <problem.icon className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{problem.title}</h3>
-              <p className="text-muted-foreground">{problem.description}</p>
-            </Card>
-          ))}
+          {/* Problems Cards */}
+          <div className="space-y-6 order-2 md:order-2">
+            {problems.map((problem, index) => (
+              <Card
+                key={index}
+                className="p-6 bg-background/80 backdrop-blur-sm border-primary/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${problem.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <problem.icon className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-2">{problem.title}</h3>
+                    <p className="text-sm text-muted-foreground">{problem.description}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
