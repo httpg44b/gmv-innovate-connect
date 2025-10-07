@@ -10,6 +10,8 @@ import { useToast } from './ui/use-toast';
 const Contact = () => {
   const { t } = useLanguage();
   const { toast } = useToast();
+
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,80 +19,127 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    toast({
-      title: t('contact.form.success'),
-      variant: 'default',
-    });
-    setFormData({ name: '', email: '', company: '', message: '' });
+    if (loading) return;
+
+    // validações básicas no cliente (opcional)
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({ title: String(t('contact.form.error')), variant: 'destructive' });
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || 'SEND_FAILED');
+      }
+
+      toast({ title: String(t('contact.form.success')), variant: 'default' });
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (err) {
+      console.error('contact submit error:', err);
+      toast({ title: String(t('contact.form.error')), variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">{t('contact.title')}</h2>
-          <p className="text-xl text-primary-foreground/80">{t('contact.subtitle')}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary-foreground">
+            {t('contact.title')}
+          </h2>
+          <p className="text-xl text-primary-foreground/80">
+            {t('contact.subtitle')}
+          </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <Label htmlFor="name" className="text-primary-foreground">{t('contact.form.name')}</Label>
+                <Label htmlFor="name" className="text-primary-foreground">
+                  {t('contact.form.name')}
+                </Label>
                 <Input
                   id="name"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  autoComplete="name"
                   className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
               <div>
-                <Label htmlFor="email" className="text-primary-foreground">{t('contact.form.email')}</Label>
+                <Label htmlFor="email" className="text-primary-foreground">
+                  {t('contact.form.email')}
+                </Label>
                 <Input
                   id="email"
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
+                  autoComplete="email"
                   className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
                 />
               </div>
             </div>
-            
+
             <div>
-              <Label htmlFor="company" className="text-primary-foreground">{t('contact.form.company')}</Label>
+              <Label htmlFor="company" className="text-primary-foreground">
+                {t('contact.form.company')}
+              </Label>
               <Input
                 id="company"
                 value={formData.company}
-                onChange={(e) => setFormData({...formData, company: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                autoComplete="organization"
                 className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
-            
+
             <div>
-              <Label htmlFor="message" className="text-primary-foreground">{t('contact.form.message')}</Label>
+              <Label htmlFor="message" className="text-primary-foreground">
+                {t('contact.form.message')}
+              </Label>
               <Textarea
                 id="message"
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
                 className="bg-background border-primary-foreground/30 text-foreground dark:text-foreground placeholder:text-muted-foreground focus:border-primary"
               />
             </div>
 
-            <Button type="submit" size="lg" className="w-full bg-primary-foreground text-secondary hover:bg-primary-foreground/90">
-              {t('contact.form.submit')}
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full bg-primary-foreground text-secondary hover:bg-primary-foreground/90"
+              disabled={loading}
+            >
+              {loading ? 'Enviando…' : t('contact.form.submit')}
               <Send className="ml-2 w-4 h-4" />
             </Button>
           </form>
 
           <div className="mt-8 text-center">
-            <a href="mailto:contact@gmvsolution.fr" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground">
+            <a
+              href="mailto:contact@gmvsolution.fr"
+              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground"
+            >
               <Mail className="w-5 h-5" />
               {t('contact.email')}
             </a>
