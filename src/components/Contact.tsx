@@ -90,7 +90,7 @@ const Contact = () => {
           </form>
 
           <div className="mt-8 text-center">
-            <a href="mailto:contato@gmvsolution.fr" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground">
+            <a href="mailto:contact@gmvsolution.fr" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground">
               <Mail className="w-5 h-5" />
               {t('contact.email')}
             </a>

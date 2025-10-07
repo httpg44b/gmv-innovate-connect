@@ -101,7 +101,7 @@ const translations = {
     'contact.form.submit': 'Envoyer le message',
     'contact.form.success': 'Message envoyé avec succès!',
     'contact.form.error': 'Erreur lors de l\'envoi. Veuillez réessayer.',
-    'contact.email': 'contato@gmvsolution.fr',
+    'contact.email': 'contact@gmvsolution.fr',
     'contact.cta': 'Commencez votre transformation digitale aujourd\'hui',
     
     // Footer
@@ -200,7 +200,7 @@ const translations = {
     'contact.form.submit': 'Send Message',
     'contact.form.success': 'Message sent successfully!',
     'contact.form.error': 'Error sending. Please try again.',
-    'contact.email': 'contato@gmvsolution.fr',
+    'contact.email': 'contact@gmvsolution.fr',
     'contact.cta': 'Start your digital transformation today',
     
     // Footer
@@ -299,7 +299,7 @@ const translations = {
     'contact.form.submit': 'Enviar Mensagem',
     'contact.form.success': 'Mensagem enviada com sucesso!',
     'contact.form.error': 'Erro ao enviar. Por favor, tente novamente.',
-    'contact.email': 'contato@gmvsolution.fr',
+    'contact.email': 'contact@gmvsolution.fr',
     'contact.cta': 'Comece sua transformação digital hoje',
     
     // Footer
