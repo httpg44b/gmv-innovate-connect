@@ -11,16 +11,24 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+// opcional: tipagem para evitar erro quando text for JSX
+type Testimonial = {
+  id: number;
+  name: string;
+  logo: string;
+  text: React.ReactNode; // <-- aceita string ou JSX
+  rating: number;
+};
+
 const Clients = () => {
   const { t } = useLanguage();
 
-  // Mock testimonials data
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       id: 1,
       name: "MAJ Tech",
       logo: majTechLogo,
-      text: t('clients.testimonial'),
+      text: t('clients.testimonial'), // pode ser JSX
       rating: 5
     },
     {
@@ -69,22 +77,28 @@ const Clients = () => {
 
         <Carousel className="max-w-4xl mx-auto">
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id}>
                 <Card className="p-8 bg-card/50 backdrop-blur-sm border-primary/10 hover:shadow-card transition-all duration-300 relative overflow-hidden group">
-                  {/* Holographic effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-tech opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                  
+                  {/* Holographic effect on hover - evita bloquear clique */}
+                  <div className="absolute inset-0 bg-gradient-tech opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" />
+
                   <Quote className="w-10 h-10 text-primary mb-6 animate-pulse-glow" />
+
+                  {/* ✅ Sem aspas envolvendo o JSX */}
                   <blockquote className="text-lg italic text-muted-foreground mb-6">
-                    "{testimonial.text}"
+                    {/* Se quiser aspas visuais, use caracteres separadamente */}
+                    <span aria-hidden>“</span>
+                    {testimonial.text}
+                    <span aria-hidden>”</span>
                   </blockquote>
+
                   <div className="flex items-center gap-4">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 blur-xl animate-pulse" />
-                      <img 
-                        src={testimonial.logo} 
-                        alt={`${testimonial.name} Logo`} 
+                      <div className="absolute inset-0 bg-primary/20 blur-xl animate-pulse pointer-events-none" />
+                      <img
+                        src={testimonial.logo}
+                        alt={`${testimonial.name} Logo`}
                         className="w-16 h-16 rounded-full object-cover border-2 border-primary/20 relative z-10"
                       />
                     </div>
@@ -92,7 +106,11 @@ const Clients = () => {
                       <p className="font-bold">{testimonial.name}</p>
                       <div className="flex gap-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-primary text-primary animate-pulse-glow" style={{animationDelay: `${i * 0.1}s`}} />
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-primary text-primary animate-pulse-glow"
+                            style={{ animationDelay: `${i * 0.1}s` }}
+                          />
                         ))}
                       </div>
                     </div>

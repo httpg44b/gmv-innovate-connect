@@ -54,13 +54,7 @@ const Impact = () => {
           ))}
         </div>
 
-        <div className="flex justify-center">
-          <img 
-            src={gmvLogoFull} 
-            alt="GMV Solution" 
-            className="h-20 object-contain opacity-80"
-          />
-        </div>
+        
       </div>
     </section>
   );
