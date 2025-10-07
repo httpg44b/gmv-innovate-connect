@@ -61,7 +61,7 @@ const Footer = () => {
             <Linkedin className="w-5 h-5 text-primary" />
           </a>
           <a 
-            href="https://www.instagram.com/gmvsolution" 
+            href="https://www.instagram.com/gmv.solution.fr" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center transition-colors duration-300"
