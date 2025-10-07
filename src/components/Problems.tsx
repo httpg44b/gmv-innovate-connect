@@ -2,7 +2,7 @@ import React from 'react';
 import { Clock, DollarSign, TrendingDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
-import gmvLogoFull from '@/assets/gmv-logo-full.png';
+import confusionImage from '@/assets/confusion-image.png';
 
 const Problems = () => {
   const { t } = useLanguage();
@@ -41,9 +41,9 @@ const Problems = () => {
           {/* Logo */}
           <div className="flex justify-center order-1 md:order-1">
             <img 
-              src={gmvLogoFull} 
-              alt="GMV Solution" 
-              className="h-24 object-contain opacity-80"
+              src={confusionImage} 
+              alt="Business Challenges" 
+              className="w-full max-w-md object-contain"
             />
           </div>
 
