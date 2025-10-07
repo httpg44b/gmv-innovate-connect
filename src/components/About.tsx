@@ -64,7 +64,7 @@ const About = () => {
                 <img 
                   src={aboutUs} 
                   alt="GMV Solution" 
-                  className="h-20 object-contain"
+                  className="h-60 object-contain opacity-100"
                 />
               </div>
               <p className="text-muted-foreground leading-relaxed">
