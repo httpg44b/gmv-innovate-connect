@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
 import gmvLogoFull from '@/assets/gmv-logo-full.png';
 import aboutUs from '../images/aboutus.jpg';
+import alvo from '../images/alvo.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -64,7 +65,7 @@ const About = () => {
                 <img 
                   src={aboutUs} 
                   alt="GMV Solution" 
-                  className="h-60 object-contain opacity-100"
+                  className="h-90 object-contain opacity-100"
                 />
               </div>
               <p className="text-muted-foreground leading-relaxed">
@@ -101,9 +102,9 @@ const About = () => {
             {/* Logo on the right */}
             <div className="flex items-center justify-center order-2 md:order-1">
               <img 
-                src={gmvLogoFull} 
+                src={alvo} 
                 alt="GMV Solution" 
-                className="h-32 object-contain opacity-80"
+                className="w-full max-w-md object-contain"
               />
             </div>
 
