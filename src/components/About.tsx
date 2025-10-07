@@ -3,6 +3,7 @@ import { Target, Eye, Heart, CheckCircle, TrendingUp, Users } from 'lucide-react
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
 import gmvLogoFull from '@/assets/gmv-logo-full.png';
+import aboutUs from '../images/aboutus.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -61,7 +62,7 @@ const About = () => {
             <Card className="p-8 bg-gradient-to-br from-primary/5 to-background border-primary/20">
               <div className="flex justify-center mb-6">
                 <img 
-                  src={gmvLogoFull} 
+                  src={aboutUs} 
                   alt="GMV Solution" 
                   className="h-20 object-contain"
                 />
