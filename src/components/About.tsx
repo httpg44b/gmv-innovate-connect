@@ -72,6 +72,7 @@ const About = () => {
                 {t('about.description')}
               </p>
             </Card>
+            
 
             {/* Differentials Cards */}
             <div className="space-y-4">
@@ -94,41 +95,48 @@ const About = () => {
 
         {/* Mission, Vision, Values Section */}
         <div>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('mvv.title')}</h2>
-          </div>
+  <div className="text-center mb-12">
+    <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('mvv.title')}</h2>
+  </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Logo on the right */}
-            <div className="flex items-center justify-center order-2 md:order-1">
-              <img 
-                src={alvo} 
-                alt="GMV Solution" 
-                className="w-full max-w-md object-contain"
-              />
-            </div>
-
-            {/* MVV Cards on the left */}
-            <div className="space-y-6 order-1 md:order-2">
-              {mvvItems.map((item, index) => (
-                <Card
-                  key={index}
-                  className={`p-6 bg-gradient-to-br ${item.gradient} border-primary/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Imagem com contorno (como a segunda imagem) */}
+    <div className="flex items-center justify-center order-2 md:order-1">
+      <Card className="p-2 rounded-2xl border border-primary/20 ring-1 ring-primary/20 shadow-lg bg-background/80 backdrop-blur-sm">
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src={alvo}
+            alt="GMV Solution"
+            className="w-full max-w-xl object-cover"
+          />
         </div>
+      </Card>
+    </div>
+
+    {/* Cartões MVV */}
+    <div className="space-y-6 order-1 md:order-2">
+      {mvvItems.map((item, index) => (
+        <Card
+          key={index}
+          className={`p-6 bg-gradient-to-br ${item.gradient} border-primary/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <item.icon className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
