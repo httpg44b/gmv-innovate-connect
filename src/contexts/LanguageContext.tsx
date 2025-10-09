@@ -47,7 +47,7 @@ const translations: Translations = {
     'about.title': 'Qui sommes-nous ?',
     'about.subtitle': 'Solutions sur mesure',
     'about.description':
-      "GMV Solution est née de la vision commune de trois entrepreneurs passionnés par la technologie: Gabriel, Matheus et Vinicius. Ils sont unis par la conviction que l'innovation peut résoudre les défis les plus complexes du quotidien. Le nom de l'entreprise est un acronyme de notre mission principale: GENERATE MORE VALUE.",
+      "GMV Solution est née de la vision commune de trois entrepreneurs passionnés par la technologie: Gabriel, Matheus et Vinicyus. Ils sont unis par la conviction que l'innovation peut résoudre les défis les plus complexes du quotidien. Le nom de l'entreprise est un acronyme de notre mission principale: GENERATE MORE VALUE.",
     'about.card1.title': 'Solutions sur mesure',
     'about.card1.description':
       'Chaque client a des besoins différents, nous ne faisons pas du "copie-collé". Nous créons des stratégies adaptées à leur secteur, budget et objectifs spécifiques.',
@@ -164,7 +164,7 @@ const translations: Translations = {
     'about.title': 'Who are we?',
     'about.subtitle': 'Customized solutions',
     'about.description':
-      'GMV Solution was born from the common vision of three entrepreneurs passionate about technology: Gabriel, Matheus and Vinicius. They are united by the belief that innovation can solve the most complex everyday challenges. The company name is an acronym for our main mission: GENERATE MORE VALUE.',
+      'GMV Solution was born from the common vision of three entrepreneurs passionate about technology: Gabriel, Matheus and Vinicyus. They are united by the belief that innovation can solve the most complex everyday challenges. The company name is an acronym for our main mission: GENERATE MORE VALUE.',
     'about.card1.title': 'Customized solutions',
     'about.card1.description':
       `Each client has different needs, we don't do "copy-paste". We create strategies adapted to their sector, budget and specific objectives.`,
@@ -280,7 +280,7 @@ const translations: Translations = {
     'about.title': 'Quem somos nós?',
     'about.subtitle': 'Soluções sob medida',
     'about.description':
-      'A GMV Solution nasceu da visão comum de três empreendedores apaixonados por tecnologia: Gabriel, Matheus e Vinicius. Eles são unidos pela convicção de que a inovação pode resolver os desafios mais complexos do cotidiano. O nome da empresa é um acrônimo de nossa missão principal: GENERATE MORE VALUE.',
+      'A GMV Solution nasceu da visão comum de três empreendedores apaixonados por tecnologia: Gabriel, Matheus e Vinicyus. Eles são unidos pela convicção de que a inovação pode resolver os desafios mais complexos do cotidiano. O nome da empresa é um acrônimo de nossa missão principal: GENERATE MORE VALUE.',
     'about.card1.title': 'Soluções sob medida',
     'about.card1.description':
       'Cada cliente tem necessidades diferentes, não fazemos "copia e cola". Criamos estratégias adaptadas ao seu setor, orçamento e objetivos específicos.',
