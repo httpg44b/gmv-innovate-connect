@@ -141,7 +141,7 @@ const translations: Translations = {
     'contact.cta': "Commencez votre transformation digitale aujourd'hui",
 
     // Footer
-    'footer.rights': '© 2024 GMV Solution. Tous droits réservés.',
+    'footer.rights': '© 2025 GMV Solution. Tous droits réservés.',
     'footer.tagline': 'Innovation • Technologie • Résultats',
   },
   en: {
@@ -257,7 +257,7 @@ const translations: Translations = {
     'contact.cta': 'Start your digital transformation today',
 
     // Footer
-    'footer.rights': '© 2024 GMV Solution. All rights reserved.',
+    'footer.rights': '© 2025 GMV Solution. All rights reserved.',
     'footer.tagline': 'Innovation • Technology • Results',
   },
   pt: {
@@ -375,7 +375,7 @@ const translations: Translations = {
     'contact.cta': 'Comece sua transformação digital hoje',
 
     // Footer
-    'footer.rights': '© 2024 GMV Solution. Todos os direitos reservados.',
+    'footer.rights': '© 2025 GMV Solution. Todos os direitos reservados.',
     'footer.tagline': 'Inovação • Tecnologia • Resultados',
   },
 };
