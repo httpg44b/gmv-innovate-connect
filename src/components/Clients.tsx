@@ -3,6 +3,9 @@ import { Star, Quote, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
 import majTechLogo from '@/assets/maj-tech-logo.jpg';
+import hotelDanube from '@/assets/hotel-danube.png';
+import hotelLutece from '@/assets/hotel-lutece.png';
+import hotelSaintGermain from '@/assets/hotel-saint-germain.png';
 import {
   Carousel,
   CarouselContent,
@@ -26,23 +29,23 @@ const Clients = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "MAJ Tech",
-      logo: majTechLogo,
-      text: t('clients.testimonial'), // pode ser JSX
+      name: "Hôtel du Danube",
+      logo: hotelDanube,
+      text: "La plateforme a révolutionné notre gestion quotidienne. Interface intuitive et résultats immédiats!",
       rating: 5
     },
     {
       id: 2,
-      name: "Digital Innovations",
-      logo: majTechLogo,
-      text: "Une équipe exceptionnelle qui a transformé notre vision en réalité.",
+      name: "Hôtel de Lutèce",
+      logo: hotelLutece,
+      text: "Une solution pratique et efficace qui nous fait gagner un temps précieux. Nous recommandons vivement!",
       rating: 5
     },
     {
       id: 3,
-      name: "Tech Solutions Inc",
-      logo: majTechLogo,
-      text: "Le meilleur partenaire technologique que nous ayons eu.",
+      name: "HVSG Paris",
+      logo: hotelSaintGermain,
+      text: "Simplicité et performance au rendez-vous. La meilleure décision que nous ayons prise pour notre établissement.",
       rating: 5
     }
   ];
