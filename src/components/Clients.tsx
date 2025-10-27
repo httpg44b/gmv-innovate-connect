@@ -2,7 +2,7 @@ import React from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card } from './ui/card';
-import majTechLogo from '@/assets/maj-tech-logo.jpg';
+import majTechLogo from '@/assets/maj-tech-logo-new.jpg';
 import hotelDanube from '@/assets/hotel-danube.png';
 import hotelLutece from '@/assets/hotel-lutece.png';
 import hotelSaintGermain from '@/assets/hotel-saint-germain.png';
@@ -29,20 +29,39 @@ const Clients = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
+      name: "MAJ Tech",
+      logo: majTechLogo,
+      text: (
+        <>
+          En peu de temps, ils ont créé une plateforme complète pour la gestion de mes services dans 4 hôtels à Paris.{" "}
+          <a 
+            href="https://www.majdesk.fr/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-primary hover:underline font-semibold"
+          >
+            Lien vers la plateforme : https://www.majdesk.fr/
+          </a>
+        </>
+      ),
+      rating: 5
+    },
+    {
+      id: 2,
       name: "Hôtel du Danube",
       logo: hotelDanube,
       text: "La plateforme a révolutionné notre gestion quotidienne. Interface intuitive et résultats immédiats!",
       rating: 5
     },
     {
-      id: 2,
+      id: 3,
       name: "Hôtel de Lutèce",
       logo: hotelLutece,
       text: "Une solution pratique et efficace qui nous fait gagner un temps précieux. Nous recommandons vivement!",
       rating: 5
     },
     {
-      id: 3,
+      id: 4,
       name: "HVSG Paris",
       logo: hotelSaintGermain,
       text: "Simplicité et performance au rendez-vous. La meilleure décision que nous ayons prise pour notre établissement.",
