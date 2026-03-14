@@ -242,6 +242,43 @@ const Hero = () => {
           />
         </div>
 
+        {/* Announcement banner */}
+        <div className="flex justify-center mb-6 animate-fade-in-up" style={{ animationDelay: '0s' }}>
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); scrollToSection('#contact'); }}
+            className="group inline-flex items-center gap-3 px-5 py-2.5 rounded-full border transition-all duration-300 hover:scale-105 cursor-pointer"
+            style={{
+              background: 'linear-gradient(135deg, rgba(59,130,246,0.12), rgba(6,182,212,0.08))',
+              borderColor: 'rgba(59,130,246,0.35)',
+              boxShadow: '0 0 20px rgba(59,130,246,0.12), inset 0 0 20px rgba(59,130,246,0.04)',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
+            {/* Pulsing dot */}
+            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-400" />
+            </span>
+
+            {/* Text */}
+            <span className="text-sm font-medium text-white/80">
+              🎉 Consultation gratuite disponible —{' '}
+              <span
+                className="font-semibold"
+                style={{ color: '#60A5FA' }}
+              >
+                Démarrez votre projet aujourd'hui
+              </span>
+            </span>
+
+            {/* Arrow */}
+            <ArrowRight
+              className="w-3.5 h-3.5 text-primary/70 group-hover:translate-x-1 transition-transform flex-shrink-0"
+            />
+          </a>
+        </div>
+
         {/* Title */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <span className="gradient-text-animated">{t('hero.title')}</span>
