@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Sun, Moon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -14,6 +15,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const { language, setLanguage, t } = useLanguage();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,8 +71,8 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/e8062710-6da1-46b7-bd53-65b99f401879.png"
               alt="GMV Solution"
-              className="h-16 w-auto transition-all duration-300 group-hover:scale-105"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(59, 130, 246, 0.4))' }}
+              className="h-24 w-auto transition-all duration-300 group-hover:scale-105"
+              style={{ filter: 'drop-shadow(0 0 12px rgba(59, 130, 246, 0.5))' }}
             />
           </a>
 
@@ -136,6 +138,27 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            {/* Theme toggle */}
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="relative w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 hover:scale-110 overflow-hidden group"
+              style={{
+                background: theme === 'dark' ? 'rgba(255,200,50,0.08)' : 'rgba(59,130,246,0.12)',
+                borderColor: theme === 'dark' ? 'rgba(255,200,50,0.25)' : 'rgba(59,130,246,0.3)',
+              }}
+              title={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+            >
+              <span
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"
+                style={{ background: theme === 'dark' ? 'rgba(255,200,50,0.15)' : 'rgba(59,130,246,0.2)' }}
+              />
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-yellow-300 relative z-10 transition-transform duration-500 group-hover:rotate-45" />
+              ) : (
+                <Moon className="w-4 h-4 text-blue-400 relative z-10 transition-transform duration-500 group-hover:-rotate-12" />
+              )}
+            </button>
+
             <button
               onClick={() => scrollToSection('#contact')}
               className="px-4 py-2 rounded-xl text-white text-sm font-semibold transition-all duration-300 hover:scale-105"
@@ -148,7 +171,23 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile theme toggle */}
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="md:hidden w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-300"
+            style={{
+              background: theme === 'dark' ? 'rgba(255,200,50,0.08)' : 'rgba(59,130,246,0.12)',
+              borderColor: theme === 'dark' ? 'rgba(255,200,50,0.25)' : 'rgba(59,130,246,0.3)',
+            }}
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-yellow-300" />
+            ) : (
+              <Moon className="w-4 h-4 text-blue-400" />
+            )}
+          </button>
+
+          {/* Mobile menu toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-white/70 hover:text-white transition-colors"

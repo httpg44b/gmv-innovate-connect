@@ -12,7 +12,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen font-inter" style={{ background: 'hsl(220 20% 7%)' }}>
+    <div className="min-h-screen font-inter bg-background">
       <Navbar />
       <Hero />
       <About />
